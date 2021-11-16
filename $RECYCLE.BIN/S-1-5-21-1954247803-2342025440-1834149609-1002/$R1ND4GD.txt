@@ -1,0 +1,36 @@
+#jenkinsfile
+ 
+pipeline {
+    agent any 
+    stages {
+        stage('Build') { 
+		tools {
+			maven ‘maven_3.3.3’
+		}
+            steps {
+                echo 'from build stage'
+            }
+        }
+        stage('Test') { 
+            steps {
+                echo 'from build stage'
+            }
+        }
+        stage('Deploy') { 
+            steps {
+                echo 'from build stage'
+            }
+        }
+    }
+	post{
+		always{
+			//
+		}
+		failure{
+			//
+		}
+		success{
+			//
+		}
+	}
+}
